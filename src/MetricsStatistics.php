@@ -27,8 +27,8 @@ class MetricsStatistics
         $this->metrics  = call_user_func(get_class($metrics) . '::where', ['type' => get_class($metrics)]);
         $this->metrics
             ->where('type', get_class($metrics))
-//             ->whereNotNull('end_at')
-            ->orderBy('end_at', 'desc')
+            ->whereNotNull('date')
+            ->orderBy('date', 'desc')
         ;
 
         $this->startAt  = Carbon::now()->startOfMonth();
