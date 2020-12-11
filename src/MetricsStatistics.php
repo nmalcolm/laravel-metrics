@@ -17,7 +17,7 @@ class MetricsStatistics
     protected $metricsModel;
     protected $startAt;
     protected $endAt;
-    protected $period = self::WEEKLY;
+    protected $period = self::DAILY;
 
     function __construct(Metrics $metrics)
     {
