@@ -161,16 +161,15 @@ abstract class Metrics extends Model
      */
     protected static function getPeriodSqlColumns($period)
     {
-        $period = "{$period}test";
         $result = [
             DB::raw('"' . $period . '" as period')
         ];
         switch ($period) {
             case 'day': {
-                $result[] = DB::raw("to_char('end_at', 'DD') as " . $period);
+                $result[] = DB::raw("to_char('end_at', 'DD') as {$period}");
             }break;
             case 'week': {
-                $result[] = DB::raw("to_char('end_at', 'WW') as " . $period);
+                $result[] = DB::raw("to_char('end_at', 'WW') as {$period}");
             }break;
             default: {
                 $result[] = DB::raw(strtoupper($period) . '(end_at) as ' . $period);
