@@ -191,7 +191,7 @@ abstract class Metrics extends Model
         return $builder->select(
             array_merge([
                 $raw,
-                DB::raw("to_char(end_at, 'YYYY-mm-dd') as date"),
+                DB::raw("to_char(end_at, 'YYYY-mm-dd')::date as date"),
             ], self::getPeriodSqlColumns($period))
         );
     }
