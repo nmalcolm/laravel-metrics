@@ -27,7 +27,7 @@ class MetricsStatistics
         $this->metrics  = call_user_func(get_class($metrics) . '::where', ['type' => get_class($metrics)]);
         $this->metrics
             ->where('type', get_class($metrics))
-            ->whereNotNull('end_at')
+//             ->whereNotNull('end_at')
             ->orderBy('end_at', 'desc')
         ;
 
@@ -119,7 +119,7 @@ class MetricsStatistics
                 $groupBy = 'WEEK(end_at, 1)';
             } break;
             default: {
-                $groupBy = "to_char(date, 'DD')";
+                $groupBy = "day";
             }
         }
 
