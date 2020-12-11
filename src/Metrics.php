@@ -162,7 +162,7 @@ abstract class Metrics extends Model
     protected static function getPeriodSqlColumns($period)
     {
         $result = [
-            DB::raw('"' . $period . '" as period')
+            DB::raw('"' . $period . 'test" as period')
         ];
         switch ($period) {
             case 'day': {
