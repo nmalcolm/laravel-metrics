@@ -165,8 +165,11 @@ abstract class Metrics extends Model
             DB::raw('"' . $period . '" as period')
         ];
         switch ($period) {
+            case 'day': {
+                $result[] = DB::raw("to_char('end_at', 'DD') as " . $period;
+            }break;
             case 'week': {
-                $result[] = DB::raw(strtoupper($period) . '(end_at, 1) as ' . $period);
+                $result[] = DB::raw("to_char('end_at', 'WW') as " . $period;
             }break;
             default: {
                 $result[] = DB::raw(strtoupper($period) . '(end_at) as ' . $period);
