@@ -119,7 +119,7 @@ class MetricsStatistics
                 $groupBy = 'WEEK(end_at, 1)';
             } break;
             default: {
-                $groupBy = strtoupper($this->period) . '(end_at)';
+                $groupBy = DB::raw("to_char(end_at::date, 'WW')::date");
             }
         }
 
