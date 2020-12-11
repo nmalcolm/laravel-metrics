@@ -1,5 +1,5 @@
 {
-  "name": "daltcore/laravel-metrics",
+  "name": "nmalcolm/laravel-metrics",
   "description": "Managable metrics",
   "keywords": ["laravel", "metrics", "statistics", "stats"],
   "license": "MIT",
@@ -16,7 +16,7 @@
   ],
   "require": {
     "php": ">=7.2",
-    "illuminate/support": "^6.0"
+    "illuminate/support": "^8.0"
   },
   "autoload": {
     "psr-4": {
