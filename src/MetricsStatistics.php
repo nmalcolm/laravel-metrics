@@ -119,7 +119,7 @@ class MetricsStatistics
                 $groupBy = 'WEEK(end_at, 1)';
             } break;
             default: {
-                $groupBy = "end_at";
+                $groupBy = "day";
             }
         }
 
